@@ -1,5 +1,9 @@
 package aplication;
 
+import entities.Adress;
+import entities.People;
+import entities.Phones;
+
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Scanner;
@@ -9,7 +13,7 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
 
         System.out.println("Entre com seu nome: ");
         String name = sc.nextLine();
@@ -18,7 +22,7 @@ public class Main {
         System.out.println("Entre com sua idade: ");
         int age = sc.nextInt();
         System.out.println("Entre com seu peso: ");
-        double Weigth = sc.nextDouble();
+        double weigth = sc.nextDouble();
 
         System.out.println();
         System.out.println("-- Preencha seu endereço --");
@@ -26,6 +30,7 @@ public class Main {
 
         System.out.print("Cep:");
         int cep = sc.nextInt();
+        sc.nextLine();
         System.out.print("Logradouro: ");
         String logradouro = sc.nextLine();
         System.out.print("referencia: ");
@@ -44,6 +49,11 @@ public class Main {
 
         System.out.println("Telefone residencial: ");
         int residential = sc.nextInt();
+
+        People people = new People(name, gender, age, weigth, new Adress(logradouro, cep, referencia, city, state),
+                new Phones(phoneR, residential));
+
+        System.out.println(people);
 
 
     }

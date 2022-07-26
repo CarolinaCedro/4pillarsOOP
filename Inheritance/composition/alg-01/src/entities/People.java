@@ -1,6 +1,8 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class People {
@@ -13,6 +15,7 @@ public class People {
     private Adress adress;
     private Phones phones;
 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
     public People() {
     }
@@ -72,5 +75,24 @@ public class People {
 
     public void setPhones(Phones phones) {
         this.phones = phones;
+    }
+
+    public String toString() {
+        return " --------------- " + "\n" +
+                "Name: " + getName() + "\n" +
+                "Genero: " + getGender() + "\n" +
+                "Idade: " + getAge() + "\n" +
+                "Peso: " + getPeso() + "\n" +
+                "Logradouro: " + getAdress().getLogradouro() + "\n" +
+                "Cep:" + getAdress().getCep() + "\n" +
+                "Referencia:" + getAdress().getRefencia() + "\n" +
+                "Cidade:" + getAdress().getCity() + "\n" +
+                "Estado:" + getAdress().getState() + "\n" +
+                "Telefone Pessoal: " + getPhones().getPersonal() + "\n" +
+                "Telefone Residencial: " + getPhones().getResidential() + "\n" +
+                "RELATORIO GERADO: " + sdf.format(new Date()) + "\n" +
+                " --------------- " + "\n"
+
+                ;
     }
 }
