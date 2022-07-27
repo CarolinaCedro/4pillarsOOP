@@ -57,7 +57,7 @@ public class Main {
             }
         }
 
-        System.out.println(" !- Animais cadastrados -!");
+        System.out.println(" -- Animais cadastrados --");
         System.out.println();
         System.out.println("Mamiferos");
         for (Mamifero listMamifero : mamiferos
